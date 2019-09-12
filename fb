@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+if [ "$1" = "h" ]
+then
+  echo "Creates a new feature branch. Pass the branch name and git username will be prepended"
+  exit 0
+fi
+
+git checkout -b "clarkbab/$1"
