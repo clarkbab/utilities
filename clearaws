@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+FILE=~/.aws/credentials
+
+if [ "$1" = "h" ]
+then
+  echo "Clears SAML AWS credentials."
+  exit 0
+fi
+
+sed -i 'bk' '/\[saml\]/,$d' $FILE
