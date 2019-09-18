@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+if [ "$1" = "h" ]
+then
+  echo "Removes local copies of deleted remote branches."
+  exit 0
+fi
+
+cmd="git fetch -p"
+echo "> $cmd"
+eval $cmd
+
+for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`
+do
+  cmd="git branch -D $branch"
+  echo "> $cmd"
+done
