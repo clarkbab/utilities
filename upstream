@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+if [ "$1" = "-h" ]
+then
+  echo "Creates an upstream to match the local branch."
+  exit 0
+fi
+
 # Get current branch.
 branch=$(git branch | grep \* | cut -d ' ' -f2)
 

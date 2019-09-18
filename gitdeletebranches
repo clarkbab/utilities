@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-if [ "$1" = "h" ]
+if [ "$1" = "-h" ]
 then
   echo "Removes local copies of deleted remote branches."
   exit 0
