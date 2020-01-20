@@ -6,8 +6,10 @@ then
   exit 0
 fi
 
+remote_repo=origin
+
 # Get current branch.
 branch=$(git branch | grep \* | cut -d ' ' -f2)
 
 # Set upstream.
-git push --set-upstream origin $branch
+git push --set-upstream $remote_repo $branch

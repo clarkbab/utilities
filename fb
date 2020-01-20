@@ -2,8 +2,12 @@
 
 if [ "$1" = "-h" ]
 then
-  echo "Creates a new feature branch. Pass the branch name and git username will be prepended"
+  echo "Creates a new feature branch and upstream in origin. Git username will be prepended"
   exit 0
 fi
 
-git checkout -b "clarkbab/$1"
+username=$(git config --get user.handle)
+
+git checkout -b "$username/$1"
+
+upstream
